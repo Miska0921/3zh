@@ -4,7 +4,7 @@ namespace _3zh
 {
     public partial class Form1 : Form
     {
-        CarContext carContext=new CarContext();
+        CarContext carContext = new CarContext();
         public Form1()
         {
             InitializeComponent();
@@ -34,8 +34,16 @@ namespace _3zh
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            newdataform newdataform = new newdataform();
-            newdataform.ShowDialog();
+            panel1.Controls.Clear();
+            newdata data = new newdata();
+            data.Dock = DockStyle.Fill;
+            panel1.Controls.Add(data);
+        }
+
+        private void buttonmodel_Click(object sender, EventArgs e)
+        {
+            newdataform form = new newdataform();
+            form.ShowDialog();
         }
     }
 }

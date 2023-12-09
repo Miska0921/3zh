@@ -32,6 +32,7 @@
             panel1 = new Panel();
             buttonData = new Button();
             buttonNew = new Button();
+            buttonmodel = new Button();
             SuspendLayout();
             // 
             // panel1
@@ -64,11 +65,22 @@
             buttonNew.UseVisualStyleBackColor = true;
             buttonNew.Click += buttonNew_Click;
             // 
+            // buttonmodel
+            // 
+            buttonmodel.Location = new Point(521, 344);
+            buttonmodel.Name = "buttonmodel";
+            buttonmodel.Size = new Size(95, 57);
+            buttonmodel.TabIndex = 3;
+            buttonmodel.Text = "Új model felvétele";
+            buttonmodel.UseVisualStyleBackColor = true;
+            buttonmodel.Click += buttonmodel_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(628, 413);
+            Controls.Add(buttonmodel);
             Controls.Add(buttonNew);
             Controls.Add(buttonData);
             Controls.Add(panel1);
@@ -85,5 +97,6 @@
         private Panel panel1;
         private Button buttonData;
         private Button buttonNew;
+        private Button buttonmodel;
     }
 }
