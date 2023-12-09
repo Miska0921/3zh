@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             listBox1 = new ListBox();
             textname = new TextBox();
             buttonsave = new Button();
             buttoncancel = new Button();
             label1 = new Label();
             label2 = new Label();
+            bindingSource1 = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // listBox1
@@ -108,6 +111,7 @@
             Name = "newdataform";
             Text = "newdataform";
             Load += newdataform_Load;
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,5 +124,6 @@
         private Button buttoncancel;
         private Label label1;
         private Label label2;
+        private BindingSource bindingSource1;
     }
 }

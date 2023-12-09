@@ -18,6 +18,7 @@ namespace _3zh
         public newdataform()
         {
             InitializeComponent();
+            bindingSource1.DataSource = context.Brands.ToList();
         }
 
         private void newdataform_Load(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace _3zh
         }
         private void markaLista()
         {
-            listBox1.DataSource = context.Brands.ToList();
+            listBox1.DataSource = bindingSource1;
             listBox1.DisplayMember = "Name";
         }
 
@@ -35,17 +36,24 @@ namespace _3zh
             Model model = new Model();
             model.Id = idfinder();
             model.BrandId = ((Brand)listBox1.SelectedItem).Id;
-            model.Name = textname.Text;
-            context.Models.Add(model);
-            try
+            if (!textname.Text.IsNullOrEmpty())
             {
-                context.SaveChanges();
+                model.Name = textname.Text;
+                context.Models.Add(model);
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Töltse ki a név mezőt!");
             }
-            this.Close();
         }
         private int idfinder()
         {
