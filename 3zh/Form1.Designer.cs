@@ -35,6 +35,10 @@
             buttonmodel = new Button();
             SuspendLayout();
             // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -67,6 +71,7 @@
             // 
             // buttonmodel
             // 
+            buttonmodel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonmodel.Location = new Point(521, 344);
             buttonmodel.Name = "buttonmodel";
             buttonmodel.Size = new Size(95, 57);

@@ -27,6 +27,7 @@ namespace _3zh
             listBox1.DisplayMember = "Name";
             listBox2.DataSource = carContext.Models.ToList();
             listBox2.DisplayMember = "Name";
+            comboFill();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,35 +42,34 @@ namespace _3zh
 
         private void buttonsave_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Biztosan menteni szeretnéd?","Megerősités",MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes) {
-            UpForSale newSale = new UpForSale();
-            newSale.Id = idfinder();
-            newSale.BrandId = ((Brand)listBox1.SelectedItem).Id;
-            newSale.ModelId = ((Model)listBox2.SelectedItem).Id;
-            newSale.Seller = textseller.Text;
-            newSale.Fuel = textfuel.Text;
-            newSale.Horsepower = int.Parse(texthp.Text);
-            newSale.Mileage = int.Parse(textkm.Text);
-            newSale.Price = int.Parse(textprice.Text);
-            carContext.UpForSales.Add(newSale);
-            try
+            DialogResult result = MessageBox.Show("Biztosan menteni szeretnéd?", "Megerősités", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                carContext.SaveChanges();
-            }
-            catch (Exception ex)
-            {
+                UpForSale newSale = new UpForSale();
+                newSale.Id = idfinder();
+                newSale.BrandId = ((Brand)listBox1.SelectedItem).Id;
+                newSale.ModelId = ((Model)listBox2.SelectedItem).Id;
+                newSale.Seller = comboBox1.Text;
+                newSale.Fuel = comboBox2.Text;
+                newSale.Horsepower = int.Parse(texthp.Text);
+                newSale.Mileage = int.Parse(textkm.Text);
+                newSale.Price = int.Parse(textprice.Text);
+                carContext.UpForSales.Add(newSale);
+                try
+                {
+                    carContext.SaveChanges();
+                }
+                catch (Exception ex)
+                {
 
-                MessageBox.Show(ex.Message);
-            }
+                    MessageBox.Show(ex.Message);
+                }
             }
             txtclear();
         }
         private void txtclear()
         {
-            textseller.Clear();
             texthp.Clear();
-            textfuel.Clear();
             textkm.Clear();
             textprice.Clear();
         }
@@ -90,5 +90,16 @@ namespace _3zh
             }
             return max + 1;
         }
+        private void comboFill()
+        {
+            comboBox1.Items.Add("Magánszemély");
+            comboBox1.Items.Add("Kereskedő");
+            comboBox1.Items.Add("Szalon");
+            comboBox2.Items.Add("Benzin");
+            comboBox2.Items.Add("Dizel");
+            comboBox2.Items.Add("Elektormos");
+            comboBox2.Items.Add("Hibrid");
+        }
+
     }
 }

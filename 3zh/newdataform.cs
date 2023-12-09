@@ -37,10 +37,11 @@ namespace _3zh
             model.BrandId = ((Brand)listBox1.SelectedItem).Id;
             model.Name = textname.Text;
             context.Models.Add(model);
-            try 
-            { 
-                context.SaveChanges(); 
-            }catch (Exception ex)
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

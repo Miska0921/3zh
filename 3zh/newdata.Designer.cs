@@ -32,9 +32,7 @@
             listBox2 = new ListBox();
             textkm = new TextBox();
             texthp = new TextBox();
-            textfuel = new TextBox();
             textprice = new TextBox();
-            textseller = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,6 +40,8 @@
             label5 = new Label();
             buttonsave = new Button();
             buttoncancel = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // listBox1
@@ -81,14 +81,6 @@
             texthp.Size = new Size(104, 23);
             texthp.TabIndex = 3;
             // 
-            // textfuel
-            // 
-            textfuel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textfuel.Location = new Point(301, 127);
-            textfuel.Name = "textfuel";
-            textfuel.Size = new Size(104, 23);
-            textfuel.TabIndex = 4;
-            // 
             // textprice
             // 
             textprice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -96,14 +88,6 @@
             textprice.Name = "textprice";
             textprice.Size = new Size(104, 23);
             textprice.TabIndex = 5;
-            // 
-            // textseller
-            // 
-            textseller.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textseller.Location = new Point(301, 214);
-            textseller.Name = "textseller";
-            textseller.Size = new Size(104, 23);
-            textseller.TabIndex = 6;
             // 
             // label1
             // 
@@ -177,10 +161,30 @@
             buttoncancel.UseVisualStyleBackColor = true;
             buttoncancel.Click += buttoncancel_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(301, 214);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(104, 23);
+            comboBox1.TabIndex = 14;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(301, 127);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(104, 23);
+            comboBox2.TabIndex = 15;
+            // 
             // newdata
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(buttoncancel);
             Controls.Add(buttonsave);
             Controls.Add(label5);
@@ -188,9 +192,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textseller);
             Controls.Add(textprice);
-            Controls.Add(textfuel);
             Controls.Add(texthp);
             Controls.Add(textkm);
             Controls.Add(listBox2);
@@ -208,9 +210,7 @@
         private ListBox listBox2;
         private TextBox textkm;
         private TextBox texthp;
-        private TextBox textfuel;
         private TextBox textprice;
-        private TextBox textseller;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -218,5 +218,7 @@
         private Label label5;
         private Button buttonsave;
         private Button buttoncancel;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }
