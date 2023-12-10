@@ -28,24 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
+            brandBindingSource = new BindingSource(components);
+            modelBindingSource = new BindingSource(components);
+            upForSaleBindingSource = new BindingSource(components);
             listBox1 = new ListBox();
             listBox2 = new ListBox();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             buttondelete = new Button();
+            bindingSource1 = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            brandIdDataGridViewTextBoxColumn = new DataGridViewComboBoxColumn();
+            modelIdDataGridViewTextBoxColumn = new DataGridViewComboBoxColumn();
+            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            horsepowerDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fuelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            sellerDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            mileageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            brandDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            modelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)brandBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)modelBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)upForSaleBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(234, 33);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, brandIdDataGridViewTextBoxColumn, modelIdDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn, horsepowerDataGridViewTextBoxColumn, fuelDataGridViewTextBoxColumn, sellerDataGridViewTextBoxColumn, mileageDataGridViewTextBoxColumn, brandDataGridViewTextBoxColumn, modelDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = upForSaleBindingSource;
+            dataGridView1.Location = new Point(221, 33);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(345, 333);
             dataGridView1.TabIndex = 0;
+            // 
+            // brandBindingSource
+            // 
+            brandBindingSource.DataSource = typeof(Models.Brand);
+            // 
+            // modelBindingSource
+            // 
+            modelBindingSource.DataSource = typeof(Models.Model);
+            // 
+            // upForSaleBindingSource
+            // 
+            upForSaleBindingSource.DataSource = typeof(Models.UpForSale);
             // 
             // listBox1
             // 
@@ -95,6 +129,76 @@
             buttondelete.UseVisualStyleBackColor = true;
             buttondelete.Click += buttondelete_Click;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // brandIdDataGridViewTextBoxColumn
+            // 
+            brandIdDataGridViewTextBoxColumn.DataPropertyName = "BrandId";
+            brandIdDataGridViewTextBoxColumn.DataSource = brandBindingSource;
+            brandIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            brandIdDataGridViewTextBoxColumn.HeaderText = "BrandId";
+            brandIdDataGridViewTextBoxColumn.Name = "brandIdDataGridViewTextBoxColumn";
+            brandIdDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            brandIdDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            brandIdDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // modelIdDataGridViewTextBoxColumn
+            // 
+            modelIdDataGridViewTextBoxColumn.DataPropertyName = "ModelId";
+            modelIdDataGridViewTextBoxColumn.DataSource = modelBindingSource;
+            modelIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            modelIdDataGridViewTextBoxColumn.HeaderText = "ModelId";
+            modelIdDataGridViewTextBoxColumn.Name = "modelIdDataGridViewTextBoxColumn";
+            modelIdDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            modelIdDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            modelIdDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // horsepowerDataGridViewTextBoxColumn
+            // 
+            horsepowerDataGridViewTextBoxColumn.DataPropertyName = "Horsepower";
+            horsepowerDataGridViewTextBoxColumn.HeaderText = "Horsepower";
+            horsepowerDataGridViewTextBoxColumn.Name = "horsepowerDataGridViewTextBoxColumn";
+            // 
+            // fuelDataGridViewTextBoxColumn
+            // 
+            fuelDataGridViewTextBoxColumn.DataPropertyName = "Fuel";
+            fuelDataGridViewTextBoxColumn.HeaderText = "Fuel";
+            fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
+            // 
+            // sellerDataGridViewTextBoxColumn
+            // 
+            sellerDataGridViewTextBoxColumn.DataPropertyName = "Seller";
+            sellerDataGridViewTextBoxColumn.HeaderText = "Seller";
+            sellerDataGridViewTextBoxColumn.Name = "sellerDataGridViewTextBoxColumn";
+            // 
+            // mileageDataGridViewTextBoxColumn
+            // 
+            mileageDataGridViewTextBoxColumn.DataPropertyName = "Mileage";
+            mileageDataGridViewTextBoxColumn.HeaderText = "Mileage";
+            mileageDataGridViewTextBoxColumn.Name = "mileageDataGridViewTextBoxColumn";
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
+            brandDataGridViewTextBoxColumn.HeaderText = "Brand";
+            brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            // 
             // dataview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -109,6 +213,10 @@
             Size = new Size(582, 424);
             Load += dataview_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)brandBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)modelBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)upForSaleBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +229,19 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Button buttondelete;
+        private BindingSource bindingSource1;
+        private BindingSource brandBindingSource;
+        private BindingSource upForSaleBindingSource;
+        private BindingSource modelBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn brandIdDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn modelIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn horsepowerDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fuelDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn sellerDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn mileageDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
     }
 }

@@ -17,12 +17,15 @@ namespace _3zh
         public dataview()
         {
             InitializeComponent();
+            modelBindingSource.DataSource = carContext.Models.ToList();
+            brandBindingSource.DataSource = carContext.Brands.ToList();
         }
 
         private void dataview_Load(object sender, EventArgs e)
         {
             brandlista();
-
+            bindingSource1.DataSource = carContext.UpForSales.ToList();
+            dataGridView1.DataSource = bindingSource1;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,7 +47,7 @@ namespace _3zh
                             where sale.ModelId == id
                             select sale;
             dataGridView1.DataSource = upforsale.ToList();
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace _3zh
         private void buttondelete_Click(object sender, EventArgs e)
         {
             UpForSale torol = (UpForSale)dataGridView1.CurrentRow.DataBoundItem;
-            DialogResult result = MessageBox.Show("Biztosan törölni szeretnéd?","Megerősités",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Biztosan törölni szeretnéd?", "Megerősités", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 carContext.UpForSales.Remove(torol);
